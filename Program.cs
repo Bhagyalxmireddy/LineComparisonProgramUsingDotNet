@@ -18,7 +18,7 @@ namespace LineComparison
             y2 = Convert.ToInt32(Console.ReadLine());
 
             double line_One_Length = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2));
-            Console.WriteLine("Length of line is : " + line_One_Length);
+            Console.WriteLine("Length of line One is : " + line_One_Length);
 
             Console.WriteLine("Enter the Values of x3 and y3 Co-ordinates");
             x3 = Convert.ToInt32(Console.ReadLine());
@@ -29,15 +29,22 @@ namespace LineComparison
             y4 = Convert.ToInt32(Console.ReadLine());
 
             double line_Two_Length = Math.Sqrt(Math.Pow(x4 - x3, 2) + Math.Pow(y4 - y3, 2));
-            Console.WriteLine("Length of line is : " + line_Two_Length);
+            Console.WriteLine("Length of line Two is : " + line_Two_Length);
 
-            if (line_One_Length.Equals(line_Two_Length))
+            double differenceInLengths = line_One_Length.CompareTo(line_Two_Length);
+            Console.WriteLine("Difference Between two Lengths is:" + differenceInLengths);
+
+            if (differenceInLengths == 0)
             {
                 Console.WriteLine("Length of Two Lines are Equal");
             }
+            else if(differenceInLengths < 0)
+            {
+                Console.WriteLine("Length of Line One is less than Length of Line Two");
+            }
             else
             {
-                Console.WriteLine("Length of Two Lines are Not Equal");
+                Console.WriteLine("Length of Line One is greater than Length of Line Two");
             }
         }
     }
